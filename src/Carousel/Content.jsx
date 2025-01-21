@@ -12,7 +12,7 @@ function CarouselContent({contentData}) {
                     <div key={index}
                          id={data.htmlId}
                          className='carousel__slide'
-                         tabIndex={index+1}>
+                         tabIndex={`-${index+1}`}>
                             <img src={data.img} />
                     </div>
                 )

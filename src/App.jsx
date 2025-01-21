@@ -21,18 +21,24 @@ const CARD_CONTENT = [
   {header: 'The card', img: Pic7, content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius inventore tempora aperiam rem vitae labore saepe, maiores vel pariatur sint? Inventore dolorem qui ipsa assumenda, excepturi nesciunt hic atque.'},
 ];
 
-function App() {
+function Navigation() {
   const [state, setState] = useState({
-      sidebar: false,
+    sidebar: false,
   });
 
   const toggleSidebar = () => 
     setState((prev) => Object.assign({}, prev, {sidebar: !prev.sidebar}));
 
+  return <>
+    <Navbar toggleSidebar={toggleSidebar} />
+    <Sidebar isActive={state.sidebar} toggleSidebar={toggleSidebar} />
+  </>;
+}
+
+function App() {
   return (
     <>
-        <Navbar toggleSidebar={toggleSidebar} />
-        <Sidebar isActive={state.sidebar} toggleSidebar={toggleSidebar} />
+        <Navigation />
         <main className='content'>
           <Cardset cards={CARD_CONTENT} />
           <Carousel name="carousel" images={CARD_CONTENT.map((card) => card.img)} />
