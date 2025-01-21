@@ -1,0 +1,27 @@
+/* Базовый класс боковой кнопки навигации  */
+.carousel__nav-side {
+    position: absolute;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    transition: transform 500ms;
+}
+
+.carousel__nav-side:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+    /* color: rgb(252, 114, 21); */
+    color: #FF00FF;
+}
+
+/* Левая кнопка навигации (в сочетании с carousel__nav-side) */
+.carousel__nav-side_left {
+    left: 1%;
+}
+
+/* Правая кнопка навигации */
+.carousel__nav-side_right {
+    right: 1%;
+}

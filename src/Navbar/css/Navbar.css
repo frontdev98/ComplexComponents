@@ -1,0 +1,234 @@
+/* Стили навигационного бара при разрешении свыше 768px */
+@media (width > 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 98%;
+        height: 75px;
+
+        display: flex;
+        flex-flow: row nowrap;
+
+        padding: 0 2rem 0 2rem;
+
+        background: #7B68EE;
+
+        z-index: 99999;
+    }
+
+    .navbar__text-logo {
+        padding: 0.7rem 0.7rem 0.7rem 1rem;
+
+        min-width: 150px;
+
+        font-family: "Shadows Into Light Two";
+        font-size: 2.5rem;
+
+        transition: text-shadow 500ms;
+    }
+
+    .navbar__text-logo:hover {
+        cursor: pointer;
+        text-shadow: 3px 3px rgb(89, 4, 187);
+    }
+
+    .navbar__item-container {
+        flex: 0 1 auto;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        z-index: 1;
+
+        background: inherit;
+    }
+
+    .navbar__item {
+        display: flex;
+        align-items: center;
+        
+        font-size: 1.5rem;
+
+        cursor: pointer;
+    }
+
+    .navbar__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 4rem;
+        height: 100%;
+
+        transition-property: transform, width;
+        transition-duration: 200ms, 500ms;
+    }
+
+    .navbar__link:hover {
+        transform: scale(1.2, 1.2);
+    }
+
+    .navbar__link:active {
+        transform: scale(0.8, 0.8);
+    }
+
+    .navbar__link_hide {
+        width: 0;
+    }
+
+    .navbar__search {
+        display: flex;
+        align-items: center;
+
+        margin-left: auto;
+
+        width: 20rem;
+
+        letter-spacing: 1px;
+
+        transition: transform 500ms;
+        transform: translateX(100%);
+    }
+
+    .navbar__search input {
+        width: 100%;
+        height: 2.3rem;
+        padding: 0 1rem 0 1rem;
+
+        border-radius: 10px;
+
+        z-index: 0;
+
+        background: #664df5;
+        color: #ffffff;
+    }
+
+    .navbar__search input::placeholder {
+        padding-left: 1rem;
+        color: #cac8c8;
+    }
+
+    .navbar__search_active {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Стили навигационного бара при разрешении ниже или равному 768px */
+@media (width < 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        
+        width: 100%;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        background: #7B68EE;
+
+        z-index: 99999;
+    }
+
+    .navbar__text-logo {
+        padding: 0.3rem 0.7rem 0.3rem 1rem;
+
+        font-family: "Shadows Into Light Two";
+        font-size: 2.5rem;
+    }
+
+    .navbar__text-logo:hover {
+        cursor: pointer;
+        text-shadow: 3px 3px rgb(89, 4, 187);
+    }
+
+    .navbar__item-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        
+        width: 100%;
+        height: 3.5rem;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        background: inherit;
+    }
+
+    .navbar__item {
+        flex: 1 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        font-size: 1.8rem;
+
+        cursor: pointer;
+    }
+
+    .navbar__item:hover {
+        background-color: rgb(77, 32, 128);
+    }
+
+    .navbar__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        transition: transform 500ms;
+    }
+
+    .navbar__link:hover {
+        transform: scale(1.3, 1.3);
+    }
+
+    .navbar__link:active {
+        transform: scale(0.8, 0.8);
+    }
+
+    .navbar__search {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+
+        z-index: 1;
+
+        width: 100%;
+        height: 3.5rem;
+        letter-spacing: 1px;
+
+        transition: transform 500ms;
+        transform: translateX(100%);
+    }
+
+    .navbar__search input {
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem 0 1rem;
+
+        font-size: 1.2rem;
+
+        background: #7B68EE;
+        color: #ffffff;
+    }
+
+    .navbar__search input::placeholder {
+        padding-left: 1rem;
+        color: #cac8c8;
+    }
+
+    .navbar__search_active {
+        transform: translateX(0%);
+    }
+}

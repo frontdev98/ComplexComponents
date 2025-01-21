@@ -1,0 +1,200 @@
+/*
+    Примеры подключения сторонних шрифтов (Google Fonts).
+*/
+
+/*
+    Пример 1.
+    _________
+
+    В этом случае используется подключение шрифта, расположенном на другом ресурсе. 
+    Но, если ресурс недоступен, то шрифт не будет отрисован.
+
+    Шрифт в примере используется только в одном экземпляре font-weight: 400 (regular), normal;
+    Использовать @font-face касательно этого шрифта не требуется, можно сразу использовать
+    font-family в классе тега.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap");
+
+/* 
+    Пример 2.
+    ________
+    Каждый файл шрифта подключается отдельной директивой font-face.
+    Каждя директива font-face подключает определенное семейство с конкретной толщиной и стилем шрифта.
+    Существует негласное правило наименования такого семейства шрифтов при объявлении директивы font-face, 
+    например:
+        Fira Sans Condensed - название шрифта.
+        Fira Sans Condensed Thin - название шрифта + слово, означающее толщину (Thin).
+
+    Указывать свойства font-weight, font-style в этом случае смысла не имеет.
+        font-family: "Fira Sans Condensed Thin";
+        src: url('./fonts/FiraSansCondensed/FiraSansCondensed-Thin.ttf');
+
+    В примере выше объявляется шрифт с конкретной толщиной и стилем и для стилизации какого-нибудь тега, 
+    достаточно прописать
+        font-family: "Fira Sans Condensed Thin";
+
+    В данном примере используются шрифты со следующими свойствами font-weight, font-style:
+    - 100 (thin), normal;
+    - 100 (thin), italic;
+    - 200 (extralight), normal;
+    - 200 (extralight), italic;
+    - 300 (light), normal;
+    - 300 (light), italic;
+    - 400 (regular), normal;
+
+    Незадействованные шрифты:
+    - 400 (regular), italic;
+    - 500 (medium), normal;
+    - 500 (medium), italic;
+    - 600 (semibold), normal;
+    - 600 (semibold), italic;
+    - 700 (bold), normal;
+    - 700 (bold), italic;
+    - 800 (extrabold), normal;
+    - 800 (extrabold), italic;
+    - 900 (black), normal;
+    - 900 (black), italic;  
+*/
+
+@font-face {
+    font-family: "Fira Sans Condensed Thin";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-Thin.ttf');
+}
+@font-face {
+    font-family: "Fira Sans Condensed Thin Italic";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-ThinItalic.ttf');
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed Extra Light";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed Extra Light Italic";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-ExtraLightItalic.ttf');
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed Light";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed Light Italic";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: "Fira Sans Condensed Regular";
+    src: url('./fonts/FiraSansCondensed/FiraSansCondensed-Regular.ttf');
+}
+
+/* При таком типе объявлений, удобнее использовать классы-модификаторы */
+.fira-sans-condensed_thin {
+    font-family: "Fira Sans Condensed Thin";
+}
+
+.fira-sans-condensed_thin_italic {
+    font-family: "Fira Sans Condensed Thin Italic";
+}
+
+.fira-sans-condensed_extralight {
+    font-family: "Fira Sans Condensed Extra Light";
+}
+
+.fira-sans-condensed_extralight_italic {
+    font-family: "Fira Sans Condensed Extra Light Italic";
+}
+
+.fira-sans-condensed_light {
+    font-family: "Fira Sans Condensed Light";
+}
+
+.fira-sans-condensed_light_italic {
+    font-family: "Fira Sans Condensed Light Italic";
+}
+
+/*
+    Пример 3.
+    _________
+
+    Каждый файл шрифта также подключается отдельно, но при этом указываются и свойства 
+    font-weight/font-style. Это нужно для того, чтобы использовать множество видов
+    одного и того же шрифта при стилизации тега, используя свойство font-family вместе с font-weight, font-style, 
+    например:
+
+        font-family: "Cormorant Infant";
+        font-weight: 500;
+        font-style: italic;
+
+    В данном примере используются шрифты со следующими свойствами font-weight, font-style:
+        - 300 (light), normal;
+        - 300 (light), italic;
+        - 400 (regular), normal;
+        - 400 (regular), italic;
+        - 500 (medium), normal;
+        - 500 (medium), italic;
+
+    Незайдествованные шрифты:
+        - 600 (semibold), normal;
+        - 600 (semibold), italic;
+        - 700 (bold), normal;
+        - 700 (bold), italic;
+*/
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url('./fonts/CormorantInfant/CormorantInfant-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("./fonts/CormorantInfant/CormorantInfant-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("./fonts/CormorantInfant/CormorantInfant-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("./fonts/CormorantInfant/CormorantInfant-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("./fonts/CormorantInfant/CormorantInfant-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("./fonts/CormorantInfant/CormorantInfant-MediumItalic.ttf");
+    font-weight: 500;
+    font-style: italic;
+}
+
+/*
+    Учти, что шрифты могут быть созданы только для определенной раскладки.
+    Не факт, что он поддерживает кириллицу или, например, иероглифы.
+
+    Ниже объявлен шрифт, не имеющий отношения к этому комментарию (он используется для
+    стилизации верхнего логотипа навигационного бара :))))) )
+*/
+
+@font-face {
+    font-family: "Shadows Into Light Two";
+    src: url('./fonts/ShadowsIntoLightTwo/ShadowsIntoLightTwo-Regular.ttf');
+}

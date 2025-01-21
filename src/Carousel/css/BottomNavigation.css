@@ -1,0 +1,32 @@
+.carousel__nav-bottom {
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel__nav-bottom-item {
+    display: inline-block;
+    margin: 5px;
+    transition: transform 500ms;
+}
+
+.carousel__nav-bottom-item:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.carousel__nav-bottom-button {
+    display: block;
+    padding: 6px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+}
+
+.carousel__nav-bottom-button:hover {
+    background: #FF00FF;
+}
+
+.active {
+    background: #FF00FF;
+}
