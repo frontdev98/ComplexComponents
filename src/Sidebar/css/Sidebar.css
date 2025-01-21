@@ -84,6 +84,10 @@
     transform: scale(1.1, 1.1);
 }
 
+.sidebar__link:active {
+    transform: scale(0.8, 0.8);
+}
+
 @media (width > 768px) {
     .sidebar {
         width: 25rem;

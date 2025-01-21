@@ -51,21 +51,9 @@ function SidebarItem(props) {
 
     return <>
         <li className='sidebar__item'>
-            <a href={url} className='sidebar__link'
-                onMouseDown={scaleDown}
-                onMouseUp={scaleUp}>{content}
-            </a>
+            <a href={url} className='sidebar__link'>{content}</a>
         </li>
     </>;
 }
-
-/* 
-   1. Обработчик события "mousedown"; визуально уменьшить элемент, не затрагивая соседние.
-   2. Обработчик события "mouseup"; визуально увелчить элемент, не затрагивая соседние.
-
-   event - объект event. 
-*/
-const scaleDown = (event) => event.currentTarget.style.transform = 'scale(0.9, 0.9)';
-const scaleUp = (event) => event.currentTarget.style.transform = '';
 
 export default Sidebar;
