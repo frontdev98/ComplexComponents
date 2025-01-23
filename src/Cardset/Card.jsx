@@ -1,4 +1,4 @@
-import './css/Card.css';
+import './Card.scss';
 
 /*
     Компонент "карточка". Используется внутри <Cardset />.

@@ -1,0 +1,55 @@
+@use '../variables';
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 300px;
+    height: 400px;
+    color: rgb(255,255,255);
+    background: variables.$primary-bg-color;
+    border-radius: 10px;
+    transition: transform 500ms;
+    cursor: pointer;
+
+    @media (width < 768px) {
+        width: auto;
+        height: auto;
+    }
+
+    header {
+        flex: 1 0 auto;
+        text-align: center;
+        @include variables.secondary-font(2rem);
+        text-decoration: underline;
+        letter-spacing: 0.1rem;
+    }
+
+    p {
+        flex: 1 0 auto;
+        margin-top: auto;
+        padding: 1rem;
+        text-align: justify;
+        letter-spacing: 1px;
+        line-height: 1.3rem;
+    }
+
+    img {
+        flex: 1 0 auto;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 150px;
+
+        @media (width < 768px) {
+            height: 250px;
+        }
+    }
+}
+
+@media (width > 768px) {
+    .card:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
+

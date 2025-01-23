@@ -1,0 +1,13 @@
+.cardset {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    max-width: 1000px;
+    row-gap: 1.5rem;
+    padding: 1.5rem;
+
+    @media (width < 768px) {
+        max-width: auto;
+        padding: 0.5rem;
+    }
+}

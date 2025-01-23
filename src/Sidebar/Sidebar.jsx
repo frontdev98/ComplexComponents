@@ -1,4 +1,4 @@
-import './css/Sidebar.css';
+import './Sidebar.scss';
 import { SlArrowLeft } from "react-icons/sl";
 
 const SIDEBAR_CONTENT = [

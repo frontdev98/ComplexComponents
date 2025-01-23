@@ -1,0 +1,14 @@
+/* Backgrounds */
+$body-bg-color: #a496f3;
+$primary-bg-color: #7B68EE;
+$secondary-bg-color: rgb(77, 32, 128);
+
+/* Fonts */
+$primary-font-family: "Fira Sans Condensed Regular";
+$secondary-font-family: "Shadows Into Light Two";
+$primary-font-color: white;
+
+@mixin secondary-font($font_size) {
+    font-size: $font_size;
+    font-family: $secondary-font-family;
+}

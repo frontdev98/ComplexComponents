@@ -1,4 +1,4 @@
-import './css/Cardset.css';
+import './Cardset.scss';
 import Card from './Card';
 
 /* 
