@@ -6,13 +6,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    padding: 50px 50px 25px 50px;
-
-    border-radius: 10px;
-    background-image: linear-gradient(
-        0.75turn, #03d4bfde, #6495ED, #1E90FF, #4169E1, 
-        #9400D3, #8A2BE2, #9932CC, #8B008B);
 }
 
 @media (width > 768px) {
@@ -24,7 +17,6 @@
 
 @media (width < 768px) {
     .carousel {
-        margin: 0 1.5rem;
         height: 300px;
     }
 }

@@ -1,7 +1,8 @@
 import Navbar from './Navbar/Navbar'
 import Sidebar from './Sidebar/Sidebar'
 import Cardset from './Cardset/Cardset';
-import Carousel from './Carousel/Carousel';
+// import Carousel from './Carousel/Carousel';
+import CarouselContainer from './CarouselNew/Carousel';
 import { useState } from 'react'
 import Pic1 from './assets/carousel-1.jpg';
 import Pic2 from './assets/carousel-2.jpg';
@@ -41,7 +42,11 @@ function App() {
         <Navigation />
         <main className='content'>
           <Cardset cards={CARD_CONTENT} />
-          <Carousel name="carousel" images={CARD_CONTENT.map((card) => card.img)} />
+          <section style={{padding: "0.5rem"}}>
+            {/* <Carousel name="carousel" images={CARD_CONTENT.map((card) => card.img)} /> */}
+            <CarouselContainer name="carousel" images={[Pic1, Pic2, Pic3, Pic4, Pic5, Pic6]} />
+          </section>
+          
         </main>
     </>
   )

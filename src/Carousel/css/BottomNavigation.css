@@ -23,6 +23,12 @@
     background: rgb(255, 255, 255);
 }
 
+@media (width < 768px) {
+    .carousel__nav-bottom-button {
+        padding: 5px;
+    }
+}
+
 .carousel__nav-bottom-button:hover {
     background: #FF00FF;
 }

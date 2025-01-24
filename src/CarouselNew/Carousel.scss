@@ -1,0 +1,110 @@
+/* Desktop (width > 768) */
+$desktop-width: 700px;
+$desktop-height: 300px;
+
+/* Mobile (width < 768) */
+$mobile-width: auto;
+$mobile-height: $desktop-height;
+
+/* Colors */
+$nav-color: #FFFFFF;
+$nav-color-active: #FF00FF;
+
+/* Animation */
+$transition-duration: 300ms; 
+
+.carousel-container {
+    position: relative;
+    width: $desktop-width;
+    height: $desktop-height;
+    
+    @media (width < 768px) {
+        width: $mobile-width;
+        height: $mobile-height;
+    }
+}
+
+@mixin arrow($right) {
+    position: absolute;
+    top: 50%;
+    right: $right;
+    padding: 10px;
+    transform: translateY(-25%);
+    transition: color $transition-duration;;
+}
+
+.arrow-left {
+    margin-left: 15px;
+    @include arrow(auto);
+
+    @media (width < 768px) {
+        display: none;
+    }
+}
+
+.arrow-right {
+    margin-right: 15px;
+    @include arrow(0);
+
+    @media (width < 768px) {
+        display: none;
+    }
+}
+
+.arrow-left:hover, 
+.arrow-right:hover {
+    color: $nav-color-active;
+}
+
+.carousel {
+    display: flex;
+    flex: row nowrap;
+    gap: 20px;
+
+    height: 100%;
+    overflow: scroll hidden;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    
+    @media (width < 768px) {
+        touch-action: pan-x;
+    }
+
+    img {
+        flex: 1 0 100%;
+        display: inline-block;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+.carousel__nav {
+    text-align: center;
+
+    input[type=radio] {
+        appearance: none;
+        padding: 6px;
+        margin: 5px 5px;
+        border-radius: 50%;
+        background-color: $nav-color;
+        transition: transform, $transition-duration;
+        cursor: pointer;
+    }
+
+    @media (width < 768px) {
+        input[type=radio] {
+            padding: 4px;
+        }
+    }
+
+    input[type=radio]:hover {
+        background-color: $nav-color-active;
+        transform: scale(1.1, 1.1);
+    }
+
+    input[type=radio]:checked {
+        background-color: $nav-color-active;
+    }
+}

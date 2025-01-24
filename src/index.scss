@@ -37,6 +37,10 @@ body {
 }
 
 form, fieldset, label, 
-input, ul, li, a {
+ul, li, a, button {
     all: unset;
+}
+
+button {
+    cursor: pointer;
 }
