@@ -1,6 +1,28 @@
 <h1> React Demo </h1>
 <p style="font-style: italic;"> Demonstration React 18 Framework and adaptive layout. </p>
 
+<h2>Requirements</h2>
+<ul>
+  <li>NodeJS 22.12.0</li>
+</ul>
+
+<h2>Launch</h2>
+
+```bash
+# 1. Download the source code and go to the folder
+git clone https://github.com/frontdev98/React-demo.git
+cd React-demo
+```
+```bash
+# 2. Launch the project in dev mode
+npm run dev
+```
+
+<h2>Build for production</h2>
+```bash
+npm run build
+```
+
 <h2> Desktop </h2>  
 <p>The layout gets activation when screen size is larger than 768 pixels.</p>
 Tested in next browsers:
