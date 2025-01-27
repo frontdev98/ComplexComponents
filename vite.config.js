@@ -8,7 +8,7 @@ process.env.BROWSER = 'google-chrome';
 export default defineConfig({
   plugins: [react()],
   
-  base: '/demo/',
+  base: '/React-18/',
 
   server: {
     host: '0.0.0.0',
