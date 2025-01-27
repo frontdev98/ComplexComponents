@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Carousel.scss'
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { RiContactsBookLine } from 'react-icons/ri';
 
 function CarouselContainer(props) {
     const images = props.images; // images for output
@@ -36,6 +35,9 @@ const Image = (props) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     const radioInput = document.querySelector(`input[target=${id}`);
+                    const carousel = radioInput.closest('.carousel-container').querySelector('.carousel');
+                    
+                    carousel.setAttribute('active', radioInput.getAttribute('target'));
                     radioInput.checked = true;
                 }
             });
@@ -59,11 +61,40 @@ function Carousel(props) {
 }
 
 function LeftArrow() {
-    return <button className="arrow-left"><SlArrowLeft /></button>
+    const onClick = (event) => {
+        const activeSlide = document.getElementById(
+            event.currentTarget.parentElement
+            .querySelector('.carousel')
+            .getAttribute('active')
+        );
+
+        const prevSlide = activeSlide.previousElementSibling;
+
+        if (prevSlide)
+            prevSlide.focus();
+        else
+            activeSlide.parentElement.lastElementChild.focus();
+    };
+
+    return <button className="arrow-left" onClick={onClick}><SlArrowLeft /></button>
 }
 
 function RightArrow() {
-    return <button className="arrow-right"><SlArrowRight /></button>
+    const onClick = (event) => {
+        const activeSlide = document.getElementById(
+            event.currentTarget.parentElement
+            .querySelector('.carousel')
+            .getAttribute('active')
+        );
+
+        const nextSlide = activeSlide.nextElementSibling;
+
+        if (nextSlide)
+            nextSlide.focus();
+        else
+            activeSlide.parentElement.firstElementChild.focus();
+    }
+    return <button className="arrow-right" onClick={onClick}><SlArrowRight /></button>
 }
 
 function BottomNav(props) {

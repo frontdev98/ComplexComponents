@@ -95,7 +95,8 @@ $transition-duration: 300ms;
 
     @media (width < 768px) {
         input[type=radio] {
-            padding: 4px;
+            width: 10px;
+            height: 10px;
         }
     }
 
