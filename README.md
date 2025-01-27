@@ -13,12 +13,14 @@
 git clone https://github.com/frontdev98/React-demo.git
 cd React-demo
 ```
+
 ```bash
 # 2. Launch the project in dev mode
 npm run dev
 ```
 
 <h2>Build for production</h2>
+
 ```bash
 npm run build
 ```
