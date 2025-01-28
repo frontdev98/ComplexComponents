@@ -1,6 +1,6 @@
 import './css/Navbar.css';
 import {SlBubble, SlUser, SlBasket, SlStar, SlMagnifier} from "react-icons/sl";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo } from 'react';
 
 const ICONS = [
     <SlBubble />, <SlUser />, 
@@ -121,7 +121,7 @@ function NavbarSearchItem(props) {
     props.url     - адрес, доступный по ссылке;
     props.content - строка или SVG-иконка;
 */
-function NavbarItem(props) {
+const NavbarItem = memo(function NavbarItem(props) {
     const url = props.url;
     const icon = props.icon;
 
@@ -130,6 +130,6 @@ function NavbarItem(props) {
             <a href={url} className='navbar__link'>{icon}</a>
         </li>
     </>;
-}
+});
 
 export default Navbar;
