@@ -1,9 +1,11 @@
-import Navbar from './Navbar/Navbar'
-import Sidebar from './Sidebar/Sidebar'
+import { BrowserRouter, Routes, Route } from 'react-router';
+
 import Cardset from './Cardset/Cardset';
-// import Carousel from './Carousel/Carousel';
 import CarouselContainer from './CarouselNew/Carousel';
-import { useState } from 'react'
+
+import Navigation from './layouts/Navigation';
+import { Content } from './layouts/Content';
+
 import Pic1 from './assets/carousel-1.jpg';
 import Pic2 from './assets/carousel-2.jpg';
 import Pic3 from './assets/carousel-3.jpg';
@@ -22,34 +24,20 @@ const CARD_CONTENT = [
   {header: 'The card', img: Pic7, content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio eius inventore tempora aperiam rem vitae labore saepe, maiores vel pariatur sint? Inventore dolorem qui ipsa assumenda, excepturi nesciunt hic atque.'},
 ];
 
-function Navigation() {
-  const [state, setState] = useState({
-    sidebar: false,
-  });
-
-  const toggleSidebar = () => 
-    setState((prev) => Object.assign({}, prev, {sidebar: !prev.sidebar}));
-
-  return <>
-    <Navbar toggleSidebar={toggleSidebar} />
-    <Sidebar isActive={state.sidebar} toggleSidebar={toggleSidebar} />
-  </>;
-}
-
 function App() {
   return (
-    <>
-        <Navigation />
-        <main className='content'>
-          <Cardset cards={CARD_CONTENT} />
-          <section style={{padding: "0.5rem"}}>
-            {/* <Carousel name="carousel" images={CARD_CONTENT.map((card) => card.img)} /> */}
-            <CarouselContainer name="carousel" images={[Pic1, Pic2, Pic3, Pic4, Pic5, Pic6]} />
-          </section>
-          
-        </main>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navigation />}>
+          <Route index path='/' />
+          <Route element={<Content /> }>
+            <Route path="/cardset" element={<Cardset cards={CARD_CONTENT} />} />
+            <Route path="/carousel" element={<CarouselContainer images={[Pic1, Pic2, Pic3, Pic4, Pic5, Pic6]} />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

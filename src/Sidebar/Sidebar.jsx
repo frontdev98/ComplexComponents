@@ -1,11 +1,16 @@
 import './Sidebar.scss';
 import { SlArrowLeft } from "react-icons/sl";
+import { Link, NavLink } from 'react-router';
 
+// const SIDEBAR_CONTENT = [
+//     'Products',
+//     'Services',
+//     'Our team',
+//     'About the company',
+// ];
 const SIDEBAR_CONTENT = [
-    'Products',
-    'Services',
-    'Our team',
-    'About the company',
+    {url: '/cardset', content: 'Cardset'},
+    {url: '/carousel', content: 'Carousel'},
 ];
 
 /*
@@ -33,7 +38,7 @@ function Sidebar(props) {
                     <SlArrowLeft />  
             </span>
             <ul className="sidebar__content">
-                {SIDEBAR_CONTENT.map((content, index) => <SidebarItem key={index} url='#' content={content} />)}
+                {SIDEBAR_CONTENT.map((content, index) => <SidebarItem key={index} url={content.url} content={content.content} />)}
             </ul>
         </aside>;
     </>;
@@ -51,7 +56,10 @@ function SidebarItem(props) {
 
     return <>
         <li className='sidebar__item'>
-            <a href={url} className='sidebar__link'>{content}</a>
+            {/* <Link className='sidebar__link' to={url}>{content}</Link> */}
+            <NavLink className={({isActive}) => 
+                isActive ? "sidebar__link active" : "sidebar__link"} 
+            to={url}>{content}</NavLink>
         </li>
     </>;
 }
