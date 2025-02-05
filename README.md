@@ -1,5 +1,14 @@
 <h1> React Demo </h1>
-<p style="font-style: italic;"> Demonstration React 18 Framework and adaptive layout. </p>
+<p>
+The application is demonstration of React 18 features. It's set of complex components.
+Realized components:
+<ul>
+   <li>Top Navigation Bar</li>
+   <li>Side Navigation Bar</li>
+   <li>Carousel</li>
+   <li>Set of cards</li>
+</ul>
+</p>
 
 __[Please, look how it works here! :)](https://frontdev98.github.io/React-18/)__
 
@@ -8,11 +17,16 @@ __[Please, look how it works here! :)](https://frontdev98.github.io/React-18/)__
   <li>NodeJS 22.12.0</li>
 </ul>
 
+<h2>Features</h2
+The application 
+
 <h2>Launch</h2>
 
 ```bash
 # 1. Download the source code and go to the folder
 git clone https://github.com/frontdev98/React-demo.git
+
+# 2. Go to the project's directory
 cd React-demo
 ```
 
