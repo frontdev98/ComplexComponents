@@ -2,8 +2,6 @@ import { defineConfig } from 'vite'
 import 'process'
 import react from '@vitejs/plugin-react'
 
-process.env.BROWSER = 'google-chrome';
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],

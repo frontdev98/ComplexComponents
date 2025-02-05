@@ -1,5 +1,5 @@
 <h1> React Demo </h1>
-<p style="font-style: italic;"> Demonstration React 18 Framework and adaptive layout. </p>  
+<p style="font-style: italic;"> Demonstration React 18 Framework and adaptive layout. </p>
 
 __[Please, look how it works here! :)](https://frontdev98.github.io/React-18/)__
 
@@ -18,7 +18,7 @@ cd React-demo
 
 ```bash
 # 2. Launch the project in dev mode
-npm run dev
+export BROWSER=${browser-name} && npm run dev -- --host 0.0.0.0 --port 8080
 ```
 
 <h2>Build for production</h2>
@@ -35,7 +35,7 @@ Tested in next browsers:
   <li>Firefox 133.0 </li>
 </ul>
 <img src="./media/sidebar_desktop.gif" style="width: 552px; height: 500px;" alt="Sidebar Desktop" >
-<img style="width: 552px;" src="./media/navbar_desktop.gif" alt="Navigation bar desktop" >  
+<img style="width: 552px;" src="./media/navbar_desktop.gif" alt="Navigation bar desktop" >
 
 <h2> Mobile Layout </h2>
 <p> The layout gets activation when screen width smaller than 768 pixels.</p>
