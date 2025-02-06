@@ -1,7 +1,7 @@
 @use '../variables';
 
 a.active {
-    background: variables.$secondary-bg-color;
+    color: variables.$secondary-bg-color;
 }
 
 .sidebar {

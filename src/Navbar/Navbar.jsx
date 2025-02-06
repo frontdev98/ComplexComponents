@@ -44,7 +44,7 @@ function Navbar(props) {
     return (
         <nav className="navbar">
             <div className="navbar__text-logo">
-                <span onClick={toggleSidebar}>BuyGame.net</span>
+                <span onClick={toggleSidebar}>Components</span>
             </div>
 
             <NavbarSearchForm isActive={state.searchForm} onBlur={hideSearching} />
