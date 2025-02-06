@@ -1,7 +1,6 @@
-<h1> React Demo </h1>
+<h1> Complex Components </h1>
 <p>
-The application is demonstration of React 18 features. It's set of complex components.
-Realized components:
+The application is demonstration of React 18 features. It's set of complex components, such as:
 <ul>
    <li>Top Navigation Bar</li>
    <li>Side Navigation Bar</li>
@@ -10,7 +9,7 @@ Realized components:
 </ul>
 </p>
 
-__[Please, look how it works here! :)](https://frontdev98.github.io/React-18/)__
+__[Please, look how it works here! :)](https://frontdev98.github.io/ComplexComponents/)__
 
 <h2>Requirements</h2>
 <ul>
