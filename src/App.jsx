@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Navigation />}>
-          <Route index path='/' />
+          <Route index path='/start' />
           <Route element={<Content /> }>
             <Route path="/cardset" element={<Cardset cards={CARD_CONTENT} />} />
             <Route path="/carousel" element={<CarouselContainer images={[Pic1, Pic2, Pic3, Pic4, Pic5, Pic6]} />} />
