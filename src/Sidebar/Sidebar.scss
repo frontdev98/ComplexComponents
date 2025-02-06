@@ -1,9 +1,5 @@
 @use '../variables';
 
-a.active {
-    color: variables.$secondary-bg-color;
-}
-
 .sidebar {
     position: fixed;
     left: 0;
